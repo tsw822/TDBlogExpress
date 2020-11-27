@@ -1,8 +1,61 @@
+/* CSS variables */
+:root {
+  --link-color: #00b7ff;
+}
+
+/* Universal reset */
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  width: 960px;
 }
 
 a {
-  color: #00B7FF;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Header and Nav CSS */
+header img {
+  width: 100px;
+  float: left;
+}
+
+header h1 {
+  float: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+#nav_menu {
+  clear: both;
+  border: 3px solid darkblue;
+  border-radius: 10px;
+}
+
+#nav_menu ul {
+  text-align: center;
+  margin: 0;
+}
+
+#nav_menu ul li {
+  display: inline-block;
+  width: 130px;
+}
+
+#nav_menu ul li:hover {
+  background-color: darkblue;
+}
+
+#nav_menu ul li a {
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  font-size: 110%;
 }
