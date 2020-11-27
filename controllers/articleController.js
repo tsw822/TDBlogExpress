@@ -34,3 +34,12 @@ exports.article_update_get = function(req, res) {
 exports.article_update_post = function(req, res) {
     res.send('NOT IMPLEMENTED: Article update POST');
 };
+// Update header on GET.
+exports.header_update_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Header update GET');
+};
+
+// Display header update form on GET.
+exports.header_update_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Header update POST');
+};

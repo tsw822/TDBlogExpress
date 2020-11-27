@@ -18,6 +18,6 @@ exports.log_in_post = function(req,res){
 
 };
 
-exports.log_out_post = function(req,res){
-    res.send('NOT IMPLEMENTED: Log out POST');
+exports.log_out_get = function(req,res){
+    res.send('NOT IMPLEMENTED: Log out GET');
 };

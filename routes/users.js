@@ -9,8 +9,6 @@ router.get('/', user_controller.log_in_get);
 
 router.post('/',user_controller.log_in_post);
 
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a user resource');
-// });
+router.get('/log_out', user_controller.log_out_get);
 
 module.exports = router;
