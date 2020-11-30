@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= articlePageTitle  %> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/tinymce/jquery.tinymce.min.js"></script>
+    <script src="/javascripts/tinymce/tinymce.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            tinymce.init({
+            selector: '#articleContent',
+            height: 500,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+            });
+        });
+    </script>
+</head>
+<body>
+    <form name="article_form" action="" method="POST" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="title" id="title" placeholder="Please enter your article title here">
+        <br><br>
+        <input type="text" name="author" id="author" placeholder="Please enter author information here">
+        <br><br>
+        <textarea name="articleContent" id="articleContent"></textarea>
+        <br><br>
+        <label for="articleImage">Please upload image for your article, best size is 500*300</label>
+        <input type="file" name="articleImage" id="articleImage">
+        <br><br>
+        <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea>
+        <br><br>
+        <label for="date">Article created Date:</label>
+        <input type="date" name="date" id="date">
+        <br><br>
+        <label for="genre">Article belongs to:</label>
+        <select name="genre" id="genre">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+</html>
