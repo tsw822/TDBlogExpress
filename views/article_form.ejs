@@ -37,6 +37,7 @@
         <br><br>
         <label for="articleImage">Please upload image for your article, best size is 500*300</label>
         <input type="file" name="articleImage" id="articleImage">
+        <img id="imagePreview" src="#" alt="Preview Image" width="150 px">
         <br><br>
         <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea>
         <br><br>
@@ -52,5 +53,26 @@
         <br><br>
         <input type="submit" name="submit" value="Submit">
     </form>
+
+    <script>
+        // Image Preview Functions
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                $('#imagePreview').attr('src', e.target.result);
+                }
+                
+                // convert to base64 string
+                reader.readAsDataURL(input.files[0]); 
+            }
+                console.log(input.files[0]);
+        }
+
+        $('#articleImage').change(function() {
+            readURL(this);
+        });
+    </script>
 </body>
 </html>
