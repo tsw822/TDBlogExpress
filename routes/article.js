@@ -1,8 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var fileUpload = require('express-fileupload');
+var path = require('path');
+var bodyParse = require('body-parser');
+
 
 // Require controller modules.
 var article_controller = require('../controllers/articleController');
+const { urlencoded } = require('express');
+myArticle = express();
+
+//using modules
+myArticle.use(bodyParse,urlencoded({ extended:false }));
+myArticle.set('views', path.join(__dirname, 'views'));
+myArticle.use(express.static(__dirname+'/public'));
+myArticle.set('view engine', 'ejs');
+myArticle.use(fileUpload());
 
 // GET request for creating a Article. NOTE This must come before routes that display Book (uses id).
 router.get('/create', article_controller.article_create_get);

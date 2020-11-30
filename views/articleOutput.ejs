@@ -1,0 +1,13 @@
+<%- include('layouts/header'); -%>
+  <body>        
+      <%- include('layouts/nav'); -%>      
+      <p>Genre: <%= genre %></p>
+      <p>Date: <%= date %></p>
+      <p>Title: <%= title %></p>
+      <p>Author: <%= author %></p>
+      <p>Abstract: <%= abstract %></p>
+      <p>Article content:</p>
+      <%- articleContent %>
+      <img src="/user_images/<%= articleImageName %>" alt="user image">
+  </body>
+  <%- include('layouts/footer'); -%>

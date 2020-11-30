@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= articlePageTitle  %> </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/javascripts/tinymce/jquery.tinymce.min.js"></script>
-    <script src="/javascripts/tinymce/tinymce.min.js"></script>
+    <script src="/js/tinymce/jquery.tinymce.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
     <script>
         $(document).ready(function(){
             tinymce.init({
@@ -28,12 +29,13 @@
     </script>
 </head>
 <body>
-    <form name="article_form" action="" method="POST" enctype="application/x-www-form-urlencoded">
+    <%- include('layouts/nav'); -%>
+    <form name="article_form" action="" method="POST" enctype="multipart/form-data">
         <input type="text" name="title" id="title" placeholder="Please enter your article title here">
         <br><br>
         <input type="text" name="author" id="author" placeholder="Please enter author information here">
         <br><br>
-        <textarea name="articleContent" id="articleContent"></textarea>
+        <textarea style="width: 600px;" name="articleContent" id="articleContent"></textarea>
         <br><br>
         <label for="articleImage">Please upload image for your article, best size is 500*300</label>
         <input type="file" name="articleImage" id="articleImage">
