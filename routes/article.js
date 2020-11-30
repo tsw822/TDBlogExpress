@@ -25,4 +25,10 @@ router.get('/:id', article_controller.article_detail);
 // GET request for list of all Article items.
 router.get('/list', article_controller.article_list_get);
 
+// GET request for update header.
+router.get('/header_update', article_controller.header_update_get);
+
+// POST request for update header.
+router.post('/header_update', article_controller.header_update_post);
+
 module.exports = router;

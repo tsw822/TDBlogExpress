@@ -12,7 +12,9 @@ exports.article_detail = function(req, res) {
 
 // Display article create form on GET.
 exports.article_create_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Article create GET');
+    var articlePageTitle = "Add new article";
+    res.render('article_form',{articlePageTitle:articlePageTitle});
+    // res.send('NOT IMPLEMENTED: Article create GET');
 };
 
 // Handle book create on POST.
@@ -33,4 +35,13 @@ exports.article_update_get = function(req, res) {
 // Handle article update on POST.
 exports.article_update_post = function(req, res) {
     res.send('NOT IMPLEMENTED: Article update POST');
+};
+// Update header on GET.
+exports.header_update_get = function(req, res) {
+    res.send('NOT IMPLEMENTED: Header update GET');
+};
+
+// Display header update form on GET.
+exports.header_update_post = function(req, res) {
+    res.send('NOT IMPLEMENTED: Header update POST');
 };
