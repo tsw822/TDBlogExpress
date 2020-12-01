@@ -7,6 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/tinymce/jquery.tinymce.min.js"></script>
     <script src="/javascripts/tinymce/tinymce.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script>
         $(document).ready(function(){
             tinymce.init({
@@ -28,31 +32,48 @@
     </script>
 </head>
 <body>
-    <form name="article_form" action="" method="POST" enctype="application/x-www-form-urlencoded">
-        <input type="text" name="title" id="title" placeholder="Please enter your article title here">
-        <br><br>
-        <input type="text" name="author" id="author" placeholder="Please enter author information here">
-        <br><br>
-        <textarea name="articleContent" id="articleContent"></textarea>
-        <br><br>
-        <label for="articleImage">Please upload image for your article, best size is 500*300</label>
-        <input type="file" name="articleImage" id="articleImage">
-        <img id="imagePreview" src="#" alt="Preview Image" width="150 px">
-        <br><br>
-        <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea>
-        <br><br>
-        <label for="date">Article created Date:</label>
-        <input type="date" name="date" id="date">
-        <br><br>
+    <div class="container col-md-10">
+        <form class="" name="article_form" action="" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="col-md-6">
+                <label class="form-text" for="title">
+                    Title :
+                </label>
+                <input class="form-control" type="text" name="title" id="title" placeholder="Please enter your article title here">
+                <br>
+                <lable class="form-text" for="author">
+                    Author :
+                </lable>
+                <input class="form-control" type="text" name="author" id="author" placeholder="Please enter author information here">
+            </div>
+            <br><br>
+            <textarea name="articleContent" id="articleContent"></textarea>
+            <br><br>
+            <p class="form-text text-muted">
+                <input type="file" name="articleImage" id="articleImage">
+                <img id="imagePreview" src="" alt="Preview Image" width="150 px">
+                Please upload image for your article, best size is 500*300
+            </p>
+            <br>
+            <!-- <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea> -->
+            <div class="form-group">
+            <label for="">Article Abstract:</label>
+            <textarea class="form-control col-md-6" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."></textarea>
+            </div>
+            <br>
+            <label for="date">Article created Date:</label>
+            <input class="form-control col-sm-4" type="date" name="date" id="date">
+            <br>
         <label for="genre">Article belongs to:</label>
-        <select name="genre" id="genre">
+        <select class="form-control col-sm-4" name="genre" id="genre">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
         <br><br>
-        <input type="submit" name="submit" value="Submit">
+        <input class="btn btn-lg btn-primary" type="submit" name="submit" value="Submit">
     </form>
+
+    </div>
 
     <script>
         // Image Preview Functions
@@ -69,10 +90,16 @@
             }
                 console.log(input.files[0]);
         }
-
         $('#articleImage').change(function() {
             readURL(this);
         });
     </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/holder.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
 </body>
 </html>
