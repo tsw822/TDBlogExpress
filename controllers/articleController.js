@@ -19,7 +19,8 @@ exports.article_create_get = function(req, res) {
 
 // Handle book create on POST.
 exports.article_create_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Article create POST');
+    res.send(req.body);
+    // res.send('NOT IMPLEMENTED: Article create POST');
 };
 
 // Delete article on GET.
