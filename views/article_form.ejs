@@ -38,26 +38,26 @@
                 <label class="form-text" for="title">
                     Title :
                 </label>
-                <input class="form-control" type="text" name="title" id="title" placeholder="Please enter your article title here">
+                <input class="form-control" type="text" name="title" id="title" placeholder="Please enter your article title here" value="<%= title %>"> 
                 <br>
                 <lable class="form-text" for="author">
                     Author :
                 </lable>
-                <input class="form-control" type="text" name="author" id="author" placeholder="Please enter author information here">
+                <input class="form-control" type="text" name="author" id="author" placeholder="Please enter author information here" value="<%= author %>"> 
             </div>
             <br><br>
-            <textarea name="articleContent" id="articleContent"></textarea>
+            <textarea name="articleContent" id="articleContent"><%= content %> </textarea>
             <br><br>
             <p class="form-text text-muted">
                 <input type="file" name="articleImage" id="articleImage">
-                <img id="imagePreview" src="" alt="Preview Image" width="150 px">
+                <img id="imagePreview" src="<%= articleimagePath %> " alt="Preview Image" width="150 px">
                 Please upload image for your article, best size is 500*300
             </p>
             <br>
             <!-- <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea> -->
             <div class="form-group">
             <label for="">Article Abstract:</label>
-            <textarea class="form-control col-md-6" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."></textarea>
+            <textarea class="form-control col-md-6" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."><%= abstract %></textarea>
             </div>
             <br>
             <label for="date">Article created Date:</label>

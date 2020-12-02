@@ -10,13 +10,28 @@ exports.article_list_get = function(req, res) {
 
 // Display detail page for a specific article.
 exports.article_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: Article detail: ' + req.params.id);
+        var id = req.params.id;
+    
+        Article.findOne({_id:id}).exec(function(err,article){
+            console.log(err);
+            console.log(article);
+            res.render('article_detail',article);
+        });
+
+    // res.send('NOT IMPLEMENTED: Article detail: ' + id);
 };
 
 // Display article create form on GET.
 exports.article_create_get = function(req, res) {
-    var articlePageTitle = "Add new article";
-    res.render('article_form',{articlePageTitle:articlePageTitle});
+    var pageData = {
+        articlePageTitle:"Add new article",
+        title:"",
+        author: "",
+        content: "",
+        abstract: "",
+        articleimagePath:""
+    };
+    res.render('article_form',pageData);
     // res.send('NOT IMPLEMENTED: Article create GET');
 };
 
@@ -60,12 +75,61 @@ exports.article_delete_get = function(req, res) {
 
 // Display article update form on GET.
 exports.article_update_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Article update GET');
+
+    var id = req.params.id;
+    
+    Article.findOne({_id:id}).exec(function(err,article){
+        console.log(err);
+        console.log(article);
+        var articleimagePath = "/article_images/"+article.image;
+        var pageData = {
+            articlePageTitle:"Edit article",
+            title:article.title,
+            author: article.author,
+            content: article.content,
+            abstract: article.abstract,
+            articleimagePath: articleimagePath
+        };
+        res.render('article_form',pageData);
+    });
 };
 
 // Handle article update on POST.
 exports.article_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Article update POST');
+
+    var title = req.body.title;
+    var author = req.body.author;
+    var articleContent = req.body.articleContent;
+    var articleImageName = req.files.articleImage.name;
+    var articleImage = req.files.articleImage;
+    var articleImagePath = 'public/article_images/'+ articleImageName;
+    var abstract = req.body.abstract;
+    var date = req.body.date;
+    var genre = req.body.genre;
+    
+    articleImage.mv(articleImagePath,function(err){
+        if(err) console.log(err);
+    });
+
+    var pageData = {
+        title: title,
+        author: author,
+        content: articleContent,
+        image: articleImageName,
+        abstract: abstract,
+        date: date,
+        genre: genre
+    };
+
+    var myArticle = new Article(pageData);
+    var query = {_id:req.params.id}
+
+    console.log(query);
+
+    Article.updateOne(query,pageData,(err,doc)=>{
+        if(err)console.log(err);
+        res.send('Article update POST');
+    })
 };
 // Update header on GET.
 exports.header_update_get = function(req, res) {
