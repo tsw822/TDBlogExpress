@@ -28,7 +28,6 @@ exports.log_in_post = function(req,res){
 };
 
 exports.log_out_get = function(req,res){
-    console.log(req.session);
     req.session.destroy();
     res.send('User session ended.');
 };
