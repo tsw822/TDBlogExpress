@@ -3,12 +3,14 @@ const fs = require('fs')
 const path = require('path')
 var {check, validationResult} = require('express-validator');
 const { readyState } = require('../model/db');
+const { json } = require('express');
 
 
 // //Display all articles as list
 exports.article_list_get = function(req, res) {
     Article.find({}).exec(function(err,articles){
         // console.log(err);
+        fs.writeFileSync(path.join(__dirname,'..','/public/article.json'),JSON.stringify(articles))
         res.render('article_list',{articles:articles});
     });
     // res.send('NOT IMPLEMENTED: Article list');
