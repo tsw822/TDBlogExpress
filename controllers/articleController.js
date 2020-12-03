@@ -1,4 +1,6 @@
 var Article = require('../model/article');
+const fs = require('fs')
+const path = require('path')
 var {check, validationResult} = require('express-validator');
 const { readyState } = require('../model/db');
 
@@ -139,15 +141,19 @@ exports.header_update_get = function(req, res) {
     res.render('header_edit');
 };
 
-// Display header update form on GET.
+// Display header update form on POST.
 exports.header_update_post = function(req, res) {
     var slagon = req.body.slagon;
     var headerImage = req.files.headerImage;
     var headerImagePath = 'public/images/logo.jpg';
-    
+
     headerImage.mv(headerImagePath,function(err){
         if(err) console.log(err);
     });
 
-    // res.send('NOT IMPLEMENTED: Header update POST');
+    fs.writeFile(path.join(__dirname,"..","/public/header.txt"),slagon,(err)=>{
+        if(err){console.log(err);}
+    })
+    res.send('header update successful');
+
 };
