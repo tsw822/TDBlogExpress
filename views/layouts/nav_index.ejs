@@ -11,9 +11,33 @@
                         }
                     } 
                 %>
-			</ul>
-        <li><a href="/article/create">New Article</a></li>
-        <li><a href="/article/header_update">Edit Header</a></li>
-        <li><a href="/users/log_out">Log Out</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Genre2 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "2"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+            </ul>
+        </li>
+        <li><a href="#">Genre3 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "3"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+            </ul>
+        </li>
+        <li><a href="/article/header_update">About us</a></li>
+        <li><a href="/users">Log In</a></li>
     </ul>
 </nav>
