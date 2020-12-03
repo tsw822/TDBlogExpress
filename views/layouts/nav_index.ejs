@@ -1,0 +1,19 @@
+<nav id="nav_index">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Genre1 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "1"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+			</ul>
+        <li><a href="/article/create">New Article</a></li>
+        <li><a href="/article/header_update">Edit Header</a></li>
+        <li><a href="/users/log_out">Log Out</a></li>
+    </ul>
+</nav>
