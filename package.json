@@ -15,7 +15,8 @@
     "mongoose": "^5.10.16",
     "morgan": "~1.9.1",
     "express-fileupload": "*",
-    "express-validator": "6.7.0"
+    "express-validator": "6.7.0",
+    "express-session": "1.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

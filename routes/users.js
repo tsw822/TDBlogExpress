@@ -9,6 +9,6 @@ router.get('/', user_controller.log_in_get);
 
 router.post('/',user_controller.log_in_post);
 
-router.get('/log_out', user_controller.log_out_get);
+router.get('/logout', user_controller.log_out_get);
 
 module.exports = router;
