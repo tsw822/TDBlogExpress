@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fileUpload = require('express-fileupload');
+var session = require('express-session');
+
 // var {check, validationResult} = require('express-validator');
 // const bodyParser = require('body-parser');
 
@@ -23,6 +25,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
+app.use(session({
+  secret:'superrandomsecret',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 24 * 60 * 60 }
+}));
+
+// app.use((req, res, next) => {
+//   const oldRedirect = res.redirect;
+//   res.redirect = function (...args) {
+//     if (req.session) {
+//       // redirecting after saving...
+//       req.session.save(() => Reflect.apply(oldRedirect, this, args))
+//     } else {
+//       Reflect.apply(oldRedirect, this, args);
+//     }
+//   }
+// });
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
