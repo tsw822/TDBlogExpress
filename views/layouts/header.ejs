@@ -1,0 +1,15 @@
+<header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        fetch('/header.txt')
+        .then((res)=>res.text())
+        .then((data)=>{
+            console.log(data);
+            $("#headerSlogon").text(data);
+        });
+    </script>
+    <img src="/images/logo.jpg" alt="logo" width="150">
+    <h1>
+        <div id = "headerSlogon"></div>
+    </h1>
+</header>

@@ -20,7 +20,7 @@ router.get('/:id/update', article_controller.article_update_get);
 router.post('/:id/update', article_controller.article_update_post);
 
 // GET request for one Article.
-router.get('/:id', article_controller.article_detail);
+router.get('/:id/detail', article_controller.article_detail);
 
 // GET request for list of all Article items.
 router.get('/list', article_controller.article_list_get);

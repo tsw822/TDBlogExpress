@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Dashboard</title>
+</head>
+<body>
+    <%- include('layouts/header'); -%>
+    <%- include('layouts/nav_dashboard'); -%>
+    <section id="article_list">
+        <table>
+            <thead>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th> 
+            </thead>
+            <tbody>
+                <% for( var article of articles  ) { 
+                    %>
+                    <tr>
+                        <td><a href="/article/<%= article.id %>/detail"><%= article.title %></a></td>
+                        <td><%= article.author %></td>
+                        <td><%= article.genre %></td>
+                        <td><%= article.date %></td>
+                        <td><input type="button" value="Edit" onclick="location.href='/article/<%= article.id %>/update'"></td>
+                        <td><input type="button" value="Delete" onclick="location.href='/article/<%= article.id %>/delete'"></td>
+                    </tr>
+                    <% 
+                    } 
+                %>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

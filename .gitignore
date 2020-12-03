@@ -3,3 +3,5 @@
 /public/javascripts/tinymce
 /package-lock.json
 .DS_Store
+package-lock.json
+.vscode/launch.json

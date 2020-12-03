@@ -1,0 +1,43 @@
+<nav id="nav_index">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Genre1 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "1"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+            </ul>
+        </li>
+        <li><a href="#">Genre2 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "2"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+            </ul>
+        </li>
+        <li><a href="#">Genre3 Articles</a> 
+			<ul>
+                <% for( var article of articles ) { 
+                        if( article.genre === "3"){
+                            %>
+                            <li><a href="/article/<%= article._id %>/detail"><%= article.title %></a></li>
+                            <%
+                        }
+                    } 
+                %>
+            </ul>
+        </li>
+        <li><a href="/article/header_update">About us</a></li>
+        <li><a href="/users">Log In</a></li>
+    </ul>
+</nav>
