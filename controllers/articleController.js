@@ -24,8 +24,7 @@ exports.article_detail = function(req, res) {
         var id = req.params.id;
 
         Article.findOne({_id:id}).exec(function(err,article){
-            console.log(err);
-            console.log(article);
+            if(err)console.log(err);
             res.render('article_detail',article);
         });
     // res.send('NOT IMPLEMENTED: Article detail: ' + id);
