@@ -12,17 +12,15 @@
 </head>
 
 <body>
-    <div class="container">
-        <%- include('layouts/header'); -%>
-        <%- include('layouts/nav_dashboard'); -%>
+    <%- include('layouts/header'); -%>
+    <%- include('layouts/nav_index'); -%>
 
-        <article>
-            <h3><%= title %></h3>
-            <h4><%= author %></h4>
-            <img src="/article_images/<%= image %>" class="img-fluid">
-            <%- content %>
-            <p>genre:<%= genre %></p>
-        </article>
-    </div>
+    <article>
+        <h3><%= article.title %></h3>
+        <h4><%= article.author %></h4>
+        <img src="/article_images/<%= article.image %>">
+        <%- article.content %>
+        <p>genre:<%= article.genre %></p>
+    </article>
 </body>
 </html>
