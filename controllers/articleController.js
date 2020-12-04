@@ -25,7 +25,11 @@ exports.article_detail = function(req, res) {
 
         Article.findOne({_id:id}).exec(function(err,article){
             if(err)console.log(err);
-            res.render('article_detail',article);
+            var file = fs.readFileSync(path.join(__dirname,'..','/public/article.json'));
+            var articles = JSON.parse(file);
+            // Article.find({}).exec(function(err,articles){
+              // console.log(err);
+            res.render('article_detail',{article:article,articles:articles});
         });
     // res.send('NOT IMPLEMENTED: Article detail: ' + id);
 };
@@ -79,7 +83,7 @@ exports.article_create_post = function(req, res) {
 
     var myArticle = new Article(pageData);
     myArticle.save().then(()=>console.log('New article created'));
-    res.redirect('/article/list');
+    res.render('success',{action:"Create article"});
     // res.send('NOT IMPLEMENTED: Article create POST');
 };
 
@@ -89,10 +93,10 @@ exports.article_delete_get = function(req, res) {
         var id = req.params.id;
         Article.findByIdAndDelete({_id: id}).exec(function(err, article){
             if(article){
-                res.render('delete', {message: 'Article removed succefully!'});                
+                res.render('success',{action:"Article removed"});
             }
             else{
-                res.render('delete', {message: 'Article not found. Please try again.'});
+                res.render('error', {message: 'Article not found. Please try again.'});
             }
         });
         //res.send('NOT IMPLEMENTED: Article delete GET');
@@ -161,7 +165,7 @@ exports.article_update_post = function(req, res) {
 
     Article.updateOne(query,pageData,(err,doc)=>{
         if(err)console.log(err);
-        res.send('Article update POST');
+        res.render('success',{action:"Update article"});
     })
 };
 // Update header on GET.
@@ -187,6 +191,6 @@ exports.header_update_post = function(req, res) {
     fs.writeFile(path.join(__dirname,"..","/public/header.txt"),slagon,(err)=>{
         if(err){console.log(err);}
     })
-    res.send('header update successful');
+    res.render('success',{action:"Update header"});
 
 };
