@@ -11,11 +11,11 @@
     <%- include('layouts/nav_index'); -%>
 
     <article>
-        <h3><%= title %></h3>
-        <h4><%= author %></h4>
-        <img src="/article_images/<%= image %>">
-        <%- content %>
-        <p>genre:<%= genre %></p>
+        <h3><%= article.title %></h3>
+        <h4><%= article.author %></h4>
+        <img src="/article_images/<%= article.image %>">
+        <%- article.content %>
+        <p>genre:<%= article.genre %></p>
     </article>
 </body>
 </html>

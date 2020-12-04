@@ -25,7 +25,11 @@ exports.article_detail = function(req, res) {
 
         Article.findOne({_id:id}).exec(function(err,article){
             if(err)console.log(err);
-            res.render('article_detail',article);
+            var file = fs.readFileSync(path.join(__dirname,'..','/public/article.json'));
+            var articles = JSON.parse(file);
+            // Article.find({}).exec(function(err,articles){
+              // console.log(err);
+            res.render('article_detail',{article:article,articles:articles});
         });
     // res.send('NOT IMPLEMENTED: Article detail: ' + id);
 };
@@ -89,10 +93,10 @@ exports.article_delete_get = function(req, res) {
         var id = req.params.id;
         Article.findByIdAndDelete({_id: id}).exec(function(err, article){
             if(article){
-                res.render('delete', {message: 'Article removed succefully!'});                
+                res.render('success',{action:"Article removed"});
             }
             else{
-                res.render('delete', {message: 'Article not found. Please try again.'});
+                res.render('error', {message: 'Article not found. Please try again.'});
             }
         });
         //res.send('NOT IMPLEMENTED: Article delete GET');
