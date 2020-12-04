@@ -80,7 +80,7 @@ exports.article_create_post = function(req, res) {
 
     var myArticle = new Article(pageData);
     myArticle.save().then(()=>console.log('New article created'));
-    res.redirect('/article/list');
+    res.render('success',{action:"Create article"});
     // res.send('NOT IMPLEMENTED: Article create POST');
 };
 
@@ -154,7 +154,7 @@ exports.article_update_post = function(req, res) {
 
     Article.updateOne(query,pageData,(err,doc)=>{
         if(err)console.log(err);
-        res.send('Article update POST');
+        res.render('success',{action:"Update article"});
     })
 };
 // Update header on GET.
@@ -180,6 +180,6 @@ exports.header_update_post = function(req, res) {
     fs.writeFile(path.join(__dirname,"..","/public/header.txt"),slagon,(err)=>{
         if(err){console.log(err);}
     })
-    res.send('header update successful');
+    res.render('success',{action:"Update header"});
 
 };
