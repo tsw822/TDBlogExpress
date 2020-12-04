@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Article Dashboard</title>
 </head>
 <body>
-
-    <%- include('layouts/header'); -%>
-    <%- include('layouts/nav_dashboard'); -%>
-    <section id="article_list">
-        <table>
-            <thead>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Date</th>
-                <th>Edit</th>
-                <th>Delete</th> 
-            </thead>
-            <tbody>
-                <% for( var article of articles  ) { 
+    <div class="container">
+        <%- include('layouts/header'); -%>
+        <%- include('layouts/nav_dashboard'); -%>
+        <section id="article_list">
+            <table>
+                <thead>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th> 
+                </thead>
+                <tbody>
+                    <% for( var article of articles  ) { 
+                        %>
+                        <tr>
+                            <td><a href="/article/<%= article.id %>/detail"><%= article.title %></a></td>
+                            <td><%= article.author %></td>
+                            <td><%= article.genre %></td>
+                            <td><%= article.date %></td>
+                            <td><input type="button" value="Edit" onclick="location.href='/article/<%= article.id %>/update'"></td>
+                            <td><input type="button" value="Delete" onclick="location.href='/article/<%= article.id %>/delete'"></td>
+                        </tr>
+                        <% 
+                        } 
                     %>
-                    <tr>
-                        <td><a href="/article/<%= article.id %>/detail"><%= article.title %></a></td>
-                        <td><%= article.author %></td>
-                        <td><%= article.genre %></td>
-                        <td><%= article.date %></td>
-                        <td><input type="button" value="Edit" onclick="location.href='/article/<%= article.id %>/update'"></td>
-                        <td><input type="button" value="Delete" onclick="location.href='/article/<%= article.id %>/delete'"></td>
-                    </tr>
-                    <% 
-                    } 
-                %>
-            </tbody>
-        </table>
-    </section>
+                </tbody>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
