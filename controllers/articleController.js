@@ -24,8 +24,7 @@ exports.article_detail = function(req, res) {
         var id = req.params.id;
 
         Article.findOne({_id:id}).exec(function(err,article){
-            console.log(err);
-            console.log(article);
+            if(err)console.log(err);
             res.render('article_detail',article);
         });
     // res.send('NOT IMPLEMENTED: Article detail: ' + id);
@@ -87,8 +86,16 @@ exports.article_create_post = function(req, res) {
 // Delete article on GET.
 exports.article_delete_get = function(req, res) {
     if(req.session.userLoggedIn){
-        
-        res.send('NOT IMPLEMENTED: Article delete GET');
+        var id = req.params.id;
+        Article.findByIdAndDelete({_id: id}).exec(function(err, article){
+            if(article){
+                res.render('delete', {message: 'Article removed succefully!'});                
+            }
+            else{
+                res.render('delete', {message: 'Article not found. Please try again.'});
+            }
+        });
+        //res.send('NOT IMPLEMENTED: Article delete GET');
     }
     else{
         res.redirect('/users');
