@@ -32,11 +32,12 @@
     </script>
 </head>
 <body>
+    <div class="container">
     <%- include('layouts/header'); -%>
     <%- include('layouts/nav_dashboard'); -%>
     <div class="container col-md-10">
         <form class="" name="article_form" action="" method="POST" enctype="multipart/form-data">
-            <div class="col-md-6">
+            <div class="col-md-6 container">
                 <label class="form-text" for="title">
                     Title :
                 </label>
@@ -48,9 +49,11 @@
                 <input class="form-control" type="text" name="author" id="author" placeholder="Please enter author information here" value="<%= author %>"> 
             </div>
             <br><br>
-            <textarea name="articleContent" id="articleContent"><%= content %> </textarea>
+            <div class="container">
+                <textarea name="articleContent" id="articleContent"><%= content %> </textarea>
+            </div>
             <br><br>
-            <p class="form-text text-muted">
+            <p class="form-text text-muted container">
                 
                     <input type="file" name="articleImage" id="articleImage">
 
@@ -59,26 +62,32 @@
             </p>
             <br>
             <!-- <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea> -->
-            <div class="form-group">
+            <div class="form-group container">
             <label for="">Article Abstract:</label>
             <textarea class="form-control col-md-6" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."><%= abstract %></textarea>
             </div>
             <br>
-            <label for="date">Article created Date:</label>
-            <input class="form-control col-sm-4" type="date" name="date" id="date">
+            <div class="container">
+                <label for="date">Article created Date:</label>
+                <input class="form-control col-sm-4" type="date" name="date" id="date">
+            </div>
             <br>
-        <label for="genre">Article belongs to:</label>
-        <select class="form-control col-sm-4" name="genre" id="genre">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <br><br>
-        <input class="btn btn-lg btn-primary" type="submit" name="submit" value="Submit">
+            <div class="container">
+                <label for="genre">Article belongs to:</label>
+                <select class="form-control col-sm-4" name="genre" id="genre">
+                    <option value="Life">Life</option>
+                    <option value="Nature">Nature</option>
+                    <option value="Poem">Poem</option>
+                </select>
+            </div>
+            <br><br>
+            <div class="container">
+                <input class="btn btn-lg btn-primary" type="submit" name="submit" value="Submit">
+            </div>
     </form>
 
     </div>
-
+</div>
     <script>
         // Image Preview Functions
         function readURL(input) {

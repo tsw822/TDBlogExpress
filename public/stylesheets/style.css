@@ -1,9 +1,10 @@
 /* CSS variables */
-:root {
+/* :root {
   --link-color: #00b7ff;
 }
 
 /* Universal reset */
+/*
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -19,9 +20,10 @@ a {
 ul {
   list-style-type: none;
 }
+*/
 
 /* Header and Nav CSS */
-header img {
+/* header img {
   width: 100px;
   float: left;
 }
@@ -61,14 +63,17 @@ header h1 {
 }
 
 /* Images css */
-img {
+/* img {
   margin: 1rem auto;
   width: 70%;
   height: auto;
 }
+*/
 
 /* Header ejs css*/
 .header-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem auto;
 }

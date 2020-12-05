@@ -11,12 +11,13 @@
     <title>Blog Article</title>
 </head>
 
-<body>
-    <%- include('layouts/header'); -%>
-    <%- include('layouts/nav_index'); -%>
-
+<body>    
     <div class="container">
-        <article>
+    <%- include('layouts/header'); -%>
+    
+    <div class="container">    
+        <%- include('layouts/nav_index'); -%>
+        <article class="container">
             <h3><%= article.title %></h3>
             <h4><%= article.author %></h4>
             <img src="/article_images/<%= article.image %>">
@@ -24,5 +25,6 @@
             <p>genre:<%= article.genre %></p>
         </article>
     </div>
+</div>
 </body>
 </html>

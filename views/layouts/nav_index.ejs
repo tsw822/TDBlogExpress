@@ -21,10 +21,10 @@
             	    <a href="/" class="nav-link active">Home</a>
             	</li>
             	<li class="nav-item dropdown">
-            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genre1</a>
+            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Life</a>
             	    <div class="dropdown-menu">
             	        <% for( var article of articles ) { 
-            	            if( article.genre === "1"){
+            	            if( article.genre === "Life"){
             	                %>
             	                <a class="dropdown-item" href="/article/<%= article._id %>/detail"><%= article.title %></a>
             	                <%
@@ -34,10 +34,10 @@
             	    </div>
             	</li>
             	<li class="nav-item dropdown">
-            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genre2</a>
+            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nature</a>
             	    <div class="dropdown-menu">
             	        <% for( var article of articles ) { 
-            	            if( article.genre === "2"){
+            	            if( article.genre === "Nature"){
             	                %>
             	                <a class="dropdown-item" href="/article/<%= article._id %>/detail"><%= article.title %></a>
             	                <%
@@ -46,10 +46,10 @@
             	    %>
             	</li>
             	<li class="nav-item dropdown">
-            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genre3</a>
+            	    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Poem</a>
             	    <div class="dropdown-menu">
             	        <% for( var article of articles ) { 
-            	            if( article.genre === "3"){
+            	            if( article.genre === "Poem"){
             	                %>
             	                <a class="dropdown-item" href="/article/<%= article._id %>/detail"><%= article.title %></a>
             	                <%
