@@ -59,3 +59,16 @@ header h1 {
   padding: 10px 0;
   font-size: 110%;
 }
+
+/* Images css */
+img {
+  margin: 1rem auto;
+  width: 70%;
+  height: auto;
+}
+
+/* Header ejs css*/
+.header-container {
+  display: flex;
+  flex-direction: row;
+}

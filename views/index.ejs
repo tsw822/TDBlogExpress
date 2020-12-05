@@ -2,11 +2,62 @@
 <html>
   <head>
     <title><%= pageTitle %></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body>    
+    <div class="container">      
       <%- include('layouts/header'); -%>
-      <%- include('layouts/nav_index'); -%>
+      <%- include('layouts/nav_index'); -%>        
 
+        <div class="col-md-6 container" style="margin-top: 50px;">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <% for( var article of articles  ) {
+                  if(article._id === '5fc6a4b886c9bd4118a6aa43') {
+                %>                        
+                        <h3 class="mb-0"><%= article.title %></h3>
+                        <div class="mb-1 text-muted"><%= article.author %></div>
+                        <p class="card-text mb-auto"><%= article.abstract %></p>                        
+                        <%
+                      }
+                  } 
+              %>
+            </div>                       
+          </div>
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+            <% for( var article of articles  ) {
+                if(article._id === '5fca76b4c0fc152ae86029c3') {
+              %>                        
+                      <h3 class="mb-0"><%= article.title %></h3>
+                      <div class="mb-1 text-muted"><%= article.author %></div>
+                      <p class="card-text mb-auto"><%= article.abstract %></p>                        
+                      <%
+                    }
+                } 
+            %>
+          </div>   
+          </div>             
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+            <% for( var article of articles  ) {
+                if(article._id === '5fca9378b6a7083104f64f4c') {
+              %>                        
+                      <h3 class="mb-0"><%= article.title %></h3>
+                      <div class="mb-1 text-muted"><%= article.author %></div>
+                      <p class="card-text mb-auto"><%= article.abstract %></p>                        
+                      <%
+                    }
+                } 
+            %>
+          </div> 
+        </div>
+      </div><!-- /.blog-post -->        
+    </div><!-- container class ends here -->
       
   </body>
 </html>
