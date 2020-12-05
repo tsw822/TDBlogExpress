@@ -77,3 +77,8 @@ header h1 {
   justify-content: space-between;
   margin: 2rem auto;
 }
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
