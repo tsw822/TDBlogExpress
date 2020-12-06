@@ -17,13 +17,12 @@
           <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <% for( var article of articles  ) {
-                  if(article._id === '5fc6a4b886c9bd4118a6aa43') {
                 %>                        
                         <h3 class="mb-0"><%= article.title %></h3>
                         <div class="mb-1 text-muted"><%= article.author %></div>
-                        <p class="card-text mb-auto"><%= article.abstract %></p>                        
+                        <p class="card-text mb-auto"><%= article.abstract %></p> 
+                        <img src="..." class="rounded float-right" alt="...">
                         <%
-                      }
                   } 
               %>
             </div>                       
