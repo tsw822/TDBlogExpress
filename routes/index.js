@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     var articles = JSON.parse(file);
     // Article.find({}).exec(function(err,articles){
       // console.log(err);
-      res.render('index',{
+      res.render('index_new',{
         articles:articles,
         pageTitle: "TD Blog"});
     // });
