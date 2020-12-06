@@ -37,7 +37,7 @@
     <%- include('layouts/nav_dashboard'); -%>
     <div class="container col-md-10">
         <form class="" name="article_form" action="" method="POST" enctype="multipart/form-data">
-            <div class="col-md-6 container">
+            <div class="col-md-12 container">
                 <label class="form-text" for="title">
                     Title :
                 </label>
@@ -60,26 +60,37 @@
                 <img id="imagePreview" src="<%= articleimagePath %> " alt="Preview Image" width="150 px">
                 Please upload image for your article, best size is 500*300
             </p>
-            <br>
+
             <!-- <textarea name="abstract" id="abstract" cols="30" rows="10" placeholder="Please enter abstract for your article, it will be show at home page."></textarea> -->
-            <div class="form-group container">
-            <label for="">Article Abstract:</label>
-            <textarea class="form-control col-md-6" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."><%= abstract %></textarea>
+            <div class="container col-md-12">
+                <div class="form-row">
+                    <div class="col-md-5">
+                        <label for="date">Article created Date:</label>
+                        <input class="form-control" type="date" name="date" id="date">
+                        <br>
+                    
+                    
+                        <label for="genre">Article belongs to:</label>
+                        <select class="form-control" name="genre" id="genre">
+                            <option value="Life">Life</option>
+                            <option value="Nature">Nature</option>
+                            <option value="Poem">Poem</option>
+                        </select>
+                    </div>
+
+             
+                    <div class="col-md-6">
+                        <div class="form-group container ">
+                            <label for="">Article Abstract:</label>
+                            <textarea class="form-control" name="abstract" id="abstract" rows="5" placeholder="Please enter abstract for your article, it will be show at home page."><%= abstract %></textarea>
+                        </div>
+                    </div>
+                    <br>
+    
+
+                </div>
             </div>
-            <br>
-            <div class="container">
-                <label for="date">Article created Date:</label>
-                <input class="form-control col-sm-4" type="date" name="date" id="date">
-            </div>
-            <br>
-            <div class="container">
-                <label for="genre">Article belongs to:</label>
-                <select class="form-control col-sm-4" name="genre" id="genre">
-                    <option value="Life">Life</option>
-                    <option value="Nature">Nature</option>
-                    <option value="Poem">Poem</option>
-                </select>
-            </div>
+          
             <br><br>
             <div class="container">
                 <input class="btn btn-lg btn-primary" type="submit" name="submit" value="Submit">
