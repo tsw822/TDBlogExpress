@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="images/icon.png">
+    <link rel="icon" type="image/ico" href="/images/icon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Blog of Shuwen & Li</title>
+    <title><%= pageTitle %></title>
 </head>
 <body>
     <%- include('layouts/header'); -%>
     <%- include('layouts/nav_index'); -%>        
 
-    <div class="container col-md-9" style="margin-top: 50px;">
+    <div class="container col-md-7" style="margin-top: 50px;">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -20,21 +20,21 @@
             </ol>
             <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="/images/skiing2.jpg" class="d-block w-100" alt="Winter Life" height="450">
+            <img src="/images/skiing2.jpg" class="d-block w-100" alt="Winter Life" height="480">
             <div class="carousel-caption d-none d-md-block" style="background-color: rgba(75, 74, 74, 0.438);">
             <h5>Winter Life</h5>
             <p>Most fun in winter is playing with SNOW.</p>
             </div>
             </div>
             <div class="carousel-item">
-            <img src="/images/lake2.jpg" class="d-block w-100" alt="Nature Beauty" height="450">
+            <img src="/images/lake2.jpg" class="d-block w-100" alt="Nature Beauty" height="480">
             <div class="carousel-caption d-none d-md-block" style="background-color: rgba(75, 74, 74, 0.438);">
             <h5>Nature Beauty</h5>
             <p>That's why we travell and seek thousands miles.</p>
             </div>
             </div>
             <div class="carousel-item">
-            <img src="/images/summerFlower.jpg" class="d-block w-100" alt="Poem Time" height="450">
+            <img src="/images/summerFlower.jpg" class="d-block w-100" alt="Poem Time" height="480">
             <div class="carousel-caption d-none d-md-block" style="background-color: rgba(75, 74, 74, 0.438);">
             <h5>Poem Time</h5>
             <p>Leaving some moment for thinking and reading.</p>
@@ -69,7 +69,7 @@
                 <img src="/article_images/blue-green-turquoise-water-of-lake-louise-early-july.jpg" class="card-img-top" alt="..." height="180px">
                 <div class="card-body">
                   <h5 class="card-title">Lake Louise</h5>
-                  <p class="card-text">Lake Louise is not only one of the largest Great Lakes; it is the largest body of fresh water on Earth..</p>
+                  <p class="card-text">Lake Louise is not only one of the largest Great Lakes; it is the largest body of fresh water on Earth. Let's sailing on it.</p>
                   <a href="/article/5fca76b4c0fc152ae86029c3/detail" class="btn btn-outline-secondary">Reading more</a>
                 </div>
               </div>

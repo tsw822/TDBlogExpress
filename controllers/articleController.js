@@ -50,7 +50,6 @@ exports.article_create_get = function(req, res) {
     else{
         res.redirect('/users');
     }
-    
     // res.send('NOT IMPLEMENTED: Article create GET');
 };
 
@@ -104,7 +103,6 @@ exports.article_delete_get = function(req, res) {
     else{
         res.redirect('/users');
     }
-    
 };
 
 // Display article update form on GET.
@@ -192,5 +190,4 @@ exports.header_update_post = function(req, res) {
         if(err){console.log(err);}
     })
     res.render('success',{action:"Update header"});
-
 };

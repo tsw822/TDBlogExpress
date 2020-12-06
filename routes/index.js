@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
       // console.log(err);
       res.render('index_new',{
         articles:articles,
-        pageTitle: "TD Blog"});
+        pageTitle: "Blog of Shuwen & Li"});
     // });
 });
 

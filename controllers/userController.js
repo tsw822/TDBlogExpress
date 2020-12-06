@@ -24,10 +24,9 @@ exports.log_in_post = function(req,res){
             res.render('log_in', {error: 'Please try again.'});
         }
     });
-
 };
 
 exports.log_out_get = function(req,res){
     req.session.destroy();
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
 };
