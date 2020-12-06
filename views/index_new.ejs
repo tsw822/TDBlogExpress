@@ -55,9 +55,9 @@
             <div class="card" style="width: 18rem;">
                 <img src="/article_images/family_skiing.jpg" class="card-img-top" alt="..." height="180px">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-secondary">Go somewhere</a>
+                  <h5 class="card-title">Family Skiing With Kids</h5>
+                  <p class="card-text">Skiing has become favorite winter family activity. Yes, skiing can be an enriching experience for both kids and adults</p>
+                  <a href="/article/5fca89adb6a7083104f64f48/detail" class="btn btn-outline-secondary">Reading more</a>
                 </div>
               </div>
         </div>
@@ -65,9 +65,9 @@
             <div class="card" style="width: 18rem;">
                 <img src="/article_images/blue-green-turquoise-water-of-lake-louise-early-july.jpg" class="card-img-top" alt="..." height="180px">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-secondary">Go somewhere</a>
+                  <h5 class="card-title">Lake Louise</h5>
+                  <p class="card-text">Lake Louise is not only one of the largest Great Lakes; it is the largest body of fresh water on Earth..</p>
+                  <a href="/article/5fca76b4c0fc152ae86029c3/detail" class="btn btn-outline-secondary">Reading more</a>
                 </div>
               </div>
         </div>
@@ -75,13 +75,29 @@
             <div class="card" style="width: 18rem;">
                 <img src="/article_images/tiger-burning-bright.jpg" class="card-img-top" alt="..." height="180px">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-secondary">Go somewhere</a>
+                  <h5 class="card-title">Poem--“The Tiger”</h5>
+                  <p class="card-text">Tiger Tiger, burning bright / In the forests of the night / What immortal hand or eye / Could frame thy fearful symmetry?</p>
+                  <a href="/article/5fca91afb6a7083104f64f4b/detail" class="btn btn-outline-secondary">Reading more</a>
                 </div>
              </div>
         </div>
     </div>
 </div>
+<div class="col-md-12 container" style="margin-top: 50px;">
+        <% for( var article of articles  ) {
+            %>                        
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <a href="/article/<%= article._id %>/detail"><h4 class="mb-0"><%= article.title %></h4></a>
+                    <div class="mb-1 text-muted"><%= article.author %></div>
+                        <p class="card-text mb-auto"><%= article.abstract %></p> 
+                    </div>                       
+                    <img src="/article_images/<%= article.image %>" class="rounded float-right" alt="article image" height="150px" width="200px">
+                </div>
+            <%
+            } 
+        %>
+</div>
+
 </body>
 </html>
